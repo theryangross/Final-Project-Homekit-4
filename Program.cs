@@ -28,7 +28,7 @@ namespace Final_Project_Homekit_2
                     var context=services.
                         GetRequiredService<HomekitDbContext>();
                     context.Database.Migrate();
-                    //SeedData.Initialize(services);
+                    SeedData.Initialize(services);
                 }
                 catch (Exception ex)
                 {
