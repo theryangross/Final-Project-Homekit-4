@@ -1,4 +1,5 @@
 using System;
+using Final_Project_Homekit_4.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,8 +10,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 
-namespace Final_Project_Homekit_4
+namespace Final_Project_Homekit_2
 {
     public class Startup
     {
@@ -31,6 +33,8 @@ namespace Final_Project_Homekit_4
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddDbContext<HomekitDbContext>(options =>
+                options.UseSqlite(Configuration.GetConnectionString("HomekitContext")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
