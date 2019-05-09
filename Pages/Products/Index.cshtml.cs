@@ -121,6 +121,8 @@ namespace Final_Project_Homekit_4.Pages.Products
 
             Product = query.ToList();
 
+            Product = await query.Skip((PageNum-1)*PageSize).Take(PageSize).ToListAsync();
+
         //public async Task OnGetAsync()
         //{
             //Product = await _context.Product
