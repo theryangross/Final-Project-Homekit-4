@@ -14,7 +14,7 @@ using Final_Project_Homekit_4.Models;
 
 namespace Final_Project_Homekit_4.Pages
 {
-    public class ContactModel : PageModel
+    public class QuestionsModel : PageModel
     {
         private readonly ILogger _log;
 
@@ -39,7 +39,7 @@ namespace Final_Project_Homekit_4.Pages
         [Display(Name = "Question")]
         public string Question {get; set;}
 
-        public ContactModel(ILogger<ContactModel> log)
+        public QuestionsModel(ILogger<QuestionsModel> log)
         {
             _log = log;
         }
