@@ -11,18 +11,25 @@
     <a asp-page="Create">Create New</a>
 </p>
 <form>
-    <p>
-        <!-- Bring in sort order drop down list -->
-        <select id="sortOrder" name="sortOrder" asp-items="Model.SortList">
-            <option value="">sort by...</option>
-        </select>
-        <select asp-for="ProductCategory" asp-items="Model.Categories">
-            <option value="">All</option>
-        </select>
-        Product Name: <input type="text" asp-for="SearchString" />
+    <div class="row">
+        <div class="col-4">
+            <!-- Bring in sort order drop down list -->
+            <select id="sortOrder" name="sortOrder" asp-items="Model.SortList">
+                <option value="">sort by...</option>
+            </select>
+        </div>
 
-        <input type="submit" value="Filter" />
-    </p>
+        <div class="col-3">
+            <select asp-for="ProductCategory" asp-items="Model.Categories">
+                <option value="">All</option>
+            </select>
+        </div>
+
+        <div class="col-5">
+            Product Name: <input type="text" asp-for="SearchString" />
+            <input type="submit" value="Filter" />
+        </div>
+    </div>
 </form>
 <table class="table">
     <thead>
